@@ -1,0 +1,146 @@
+# .NET 8 .gitignore
+
+# General .NET ignores
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.userprefs
+*.nupkg
+*.njsproj
+*.swp
+*.swo
+packages/
+.nuget/
+artifacts/
+.vs/
+.dotnet/
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]inaries/
+[Oo]bj/
+
+# IDE specific files
+.idea/
+.vscode/
+*.code-workspace
+
+# Test files and results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.trx
+coverage/
+coverage.*.json
+*.coverage
+*.coveragexml
+*.runsettings
+
+# Front-end dependencies (if applicable)
+node_modules/
+wwwroot/lib/
+dist/
+out/
+.cache/
+.angular/
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+appsettings.Development.json
+secrets.json
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+docker-compose.vs.debug.g.yml
+
+# Local development files
+*.back
+*.bak
+*.tmp
+*.orig
+
+# Build output
+*.log
+*.dll
+*.pdb
+*.exe
+*.ilk
+*.meta
+*.csv
+*.xml
+
+# NuGet
+NuGet.Config
+
+# Rider
+*.sln.iml
+
+# VS Code
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# VS
+*.psess
+*.vsp
+*.vspx
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Output directory for publish
+publish/
+
+# MSTest
+*.Test.xml
+
+# Package manager files
+packages/
+*.pubxml
+PackageTester/
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+*.DotSettings.user
+
+# Visual Studio cache/options directory
+.vs/
+
+# Microsoft Azure
+*.pfx
+*.publishsettings
+
+# Local History
+.history/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Linux trash folder
+.Trash-*
+
+# Project specific ignores (add your custom patterns here)
