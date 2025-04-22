@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("API-VidaPlus")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d48dc7c379bed818071758f79c4c2bbe8d8cba82")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c3888cd29c74ec67a08b2c1d58e33375792376d")]
 [assembly: System.Reflection.AssemblyProductAttribute("API-VidaPlus")]
 [assembly: System.Reflection.AssemblyTitleAttribute("API-VidaPlus")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

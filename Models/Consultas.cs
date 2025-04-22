@@ -3,8 +3,9 @@
     public class Consultas
     {
         public int Id { get; set; }
-        public int PacienteId { get; set; }
-        public int MedicoId { get; set; }
+        public Usuarios PacienteId { get; set; }
+        public Usuarios MedicoId { get; set; }
         public DateTime MarcadoPara { get; set; }
+        public bool Compareceu { get; set; }    
     }
 }
