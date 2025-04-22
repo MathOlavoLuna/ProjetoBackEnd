@@ -10,6 +10,21 @@ namespace API_VidaPlus.Data
         }
 
         public DbSet<Usuarios> Usuarios { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Define a unique constraint for the "Email" property
+            modelBuilder.Entity<Usuarios>()
+                .HasIndex(u => u.Email)
+                .IsUnique();
+
+            // Define a unique constraint for the "Cpf" property
+            modelBuilder.Entity<Usuarios>()
+                .HasIndex(u => u.Cpf)
+                .IsUnique();
+        }
     }
 }
             

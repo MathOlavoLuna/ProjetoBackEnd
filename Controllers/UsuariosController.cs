@@ -22,14 +22,28 @@ namespace API_VidaPlus.Controllers
         }
 
         [HttpPost]
-        public async Task<string> CriarUsuario(string Nome = "", int Idade = 0, string Cpf = "", string Email = "", TiposUsuarios Tipo = TiposUsuarios.Paciente)
+        public async Task<ActionResult<List<Usuarios>>> CriarUsuario(string Nome = "", int Idade = 0, string Cpf = "", string Email = "", 
+            TiposUsuarios Tipo = TiposUsuarios.Paciente)
         {
             Usuarios user = new Usuarios(Nome, Idade, Cpf, Email, Tipo);
 
+            if (await _context.Usuarios.AnyAsync(u => u.Email == user.Email))
+            {
+                throw new InvalidOperationException("Email já existente.");
+            }
+
+            if (await _context.Usuarios.AnyAsync(u => u.Cpf == user.Cpf))
+            {
+                throw new InvalidOperationException("CPF já existente.");
+            }
+
             await _context.Usuarios.AddAsync(user);
-            return "Criado com Sucesso";
+            await _context.SaveChangesAsync();
+
+            return Ok(user);
 
         }
+
         [HttpPut]
         public async Task<JsonResult> EditarUsuario(int UsuarioID, string Nome = "", int Idade = 0, string Cpf = "", string Email = "")
         {
