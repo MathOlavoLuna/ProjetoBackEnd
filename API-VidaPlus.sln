@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API-VidaPlus", "API-VidaPlus.csproj", "{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E7648A3-DF5F-4422-8C76-9D50D102C89C}
+	EndGlobalSection
+EndGlobal

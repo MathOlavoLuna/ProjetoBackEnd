@@ -1,0 +1,6 @@
+@API_VidaPlus_HostAddress = http://localhost:5068
+
+GET {{API_VidaPlus_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "2roQMY7Bvr6aHTOdcv1g8sDF/fbmDVHuf0qtqpaVm3A=",
+  "Source": "API-VidaPlus",
+  "BasePath": "_content/API-VidaPlus",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
