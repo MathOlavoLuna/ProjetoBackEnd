@@ -1,6 +1,9 @@
 ﻿namespace API_VidaPlus.Models
 {
-    public class TiposConsultas
+    public enum TiposConsultas
     {
+        TeleConsulta,
+        ConsultaRotina,
+        ConsultaUrgente
     }
 }

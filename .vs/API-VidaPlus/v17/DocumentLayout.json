@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\user\\desktop\\uninter\\projetobackend\\models\\prescricoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:models\\prescricoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\user\\desktop\\uninter\\projetobackend\\models\\consultas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:models\\consultas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\user\\desktop\\uninter\\projetobackend\\models\\tiposusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:models\\tiposusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\user\\desktop\\uninter\\projetobackend\\models\\tiposconsultas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:models\\tiposconsultas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\user\\desktop\\uninter\\projetobackend\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -53,20 +69,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "UsuariosController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Controllers\\UsuariosController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsuariosController.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Controllers\\UsuariosController.cs",
               "RelativeToolTip": "Controllers\\UsuariosController.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAkwCMAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAkwBkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T20:33:02.667Z",
               "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Prescricoes.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Models\\Prescricoes.cs",
+              "RelativeDocumentMoniker": "Models\\Prescricoes.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Models\\Prescricoes.cs",
+              "RelativeToolTip": "Models\\Prescricoes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T20:17:42.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TiposUsuarios.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Models\\TiposUsuarios.cs",
+              "RelativeDocumentMoniker": "Models\\TiposUsuarios.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Models\\TiposUsuarios.cs",
+              "RelativeToolTip": "Models\\TiposUsuarios.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T19:27:01.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TiposConsultas.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Models\\TiposConsultas.cs",
+              "RelativeDocumentMoniker": "Models\\TiposConsultas.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Models\\TiposConsultas.cs",
+              "RelativeToolTip": "Models\\TiposConsultas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T19:26:56.354Z",
               "EditorCaption": ""
             },
             {
@@ -79,7 +134,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "Consultas.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Models\\Consultas.cs",
+              "RelativeDocumentMoniker": "Models\\Consultas.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Models\\Consultas.cs",
+              "RelativeToolTip": "Models\\Consultas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T19:05:36.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "DataContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Migrations\\DataContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "Migrations\\DataContextModelSnapshot.cs",
@@ -92,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Usuarios.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Models\\Usuarios.cs",
               "RelativeDocumentMoniker": "Models\\Usuarios.cs",
@@ -105,7 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "20250421224319_Initial.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Migrations\\20250421224319_Initial.cs",
               "RelativeDocumentMoniker": "Migrations\\20250421224319_Initial.cs",
@@ -118,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "API-VidaPlus.http",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\API-VidaPlus.http",
               "RelativeDocumentMoniker": "API-VidaPlus.http",
@@ -130,7 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "API-VidaPlus.csproj",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\API-VidaPlus.csproj",
               "RelativeDocumentMoniker": "API-VidaPlus.csproj",
@@ -142,7 +210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -154,7 +222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "TiposUsuarios.cs",
               "DocumentMoniker": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Entities\\TiposUsuarios.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\SrMat\\source\\repos\\API-VidaPlus\\Entities\\TiposUsuarios.cs",
@@ -165,7 +233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -177,7 +245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "DataContext.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Data\\DataContext.cs",
               "RelativeDocumentMoniker": "Data\\DataContext.cs",
@@ -190,7 +258,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
