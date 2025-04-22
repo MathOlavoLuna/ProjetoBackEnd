@@ -1,4 +1,4 @@
-﻿using API_VidaPlus.Entities;
+﻿using API_VidaPlus.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace API_VidaPlus.Data
