@@ -111,7 +111,6 @@ C:\Users\SrMat\source\repos\API-VidaPlus\bin\Debug\net8.0\zh-Hans\Microsoft.Code
 C:\Users\SrMat\source\repos\API-VidaPlus\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\SrMat\source\repos\API-VidaPlus\bin\Debug\net8.0\MySqlConnector.dll
 C:\Users\SrMat\source\repos\API-VidaPlus\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
-C:\Users\SrMat\source\repos\API-VidaPlus\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\User\Desktop\Uninter\ProjetoBackEnd\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\User\Desktop\Uninter\ProjetoBackEnd\bin\Debug\net8.0\appsettings.json
 C:\Users\User\Desktop\Uninter\ProjetoBackEnd\bin\Debug\net8.0\API-VidaPlus.staticwebassets.endpoints.json
@@ -227,3 +226,5 @@ C:\Users\User\Desktop\Uninter\ProjetoBackEnd\obj\Debug\net8.0\API-VidaPlus.pdb
 C:\Users\User\Desktop\Uninter\ProjetoBackEnd\obj\Debug\net8.0\API-VidaPlus.genruntimeconfig.cache
 C:\Users\User\Desktop\Uninter\ProjetoBackEnd\obj\Debug\net8.0\ref\API-VidaPlus.dll
 C:\Users\User\Desktop\Uninter\ProjetoBackEnd\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\SrMat\source\repos\API-VidaPlus\obj\Debug\net8.0\API-VidaPlus.sourcelink.json
+C:\Users\SrMat\source\repos\API-VidaPlus\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -54,7 +54,7 @@ namespace API_VidaPlus.Controllers
                Usuario.Idade = Idade != 0 ? Idade : Usuario.Idade;
                Usuario.Cpf = Cpf != "" ? Cpf : Usuario.Cpf;
                Usuario.Email = Email != string.Empty ? Email : Usuario.Email;
-               _context.Update(Usuario);
+               _context.Usuarios.Update(Usuario);
                return Json(Usuario);
             }
             return Json(null);
