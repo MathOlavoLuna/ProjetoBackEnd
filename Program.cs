@@ -1,4 +1,6 @@
 using API_VidaPlus.Data;
+using API_VidaPlus.Services;
+using API_VidaPlus.Services.Geral;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -16,6 +18,8 @@ builder.Services.AddDbContext<DataContext>(opt =>
     new MySqlServerVersion(new Version(8, 0, 29))
   )
 );
+builder.Services.AddScoped(typeof(CRUDService<>));
+builder.Services.AddScoped<UsuariosServices>();
 
 var app = builder.Build();
 

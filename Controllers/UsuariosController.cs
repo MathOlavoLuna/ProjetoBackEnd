@@ -1,7 +1,9 @@
 ﻿using API_VidaPlus.Data;
 using API_VidaPlus.Models;
+using API_VidaPlus.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace API_VidaPlus.Controllers
 {
@@ -9,66 +11,41 @@ namespace API_VidaPlus.Controllers
     [ApiController]
     public class UsuariosController : Controller
     {
-        private readonly DataContext _context;
-        public UsuariosController(DataContext context) { //injeção de dependência;
-            _context = context;
+        private readonly UsuariosServices _services;
+        public UsuariosController(UsuariosServices service) { //injeção de dependência;
+            _services = service;
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Usuarios>>> RetornarUsuarios()
-        { 
-           var UsuarioTeste = await _context.Usuarios.ToListAsync();
-           return Ok(UsuarioTeste);
+        public async Task<ActionResult<RetornoService<Usuarios>>> RetornarUsuarios()
+        {
+            return Ok(await _services.RetornaUsuarios());
         }
 
+        //[HttpGet]
+        //public async Task<ActionResult<RetornoService<Usuarios>>> RetornarUsuario(int Id)
+        //{
+        //    return Ok(await _services.RetornaUsuarioID(Id));
+        //}
+
         [HttpPost]
-        public async Task<ActionResult<List<Usuarios>>> CriarUsuario(string Nome = "", int Idade = 0, string Cpf = "", string Email = "", 
+        public async Task<ActionResult<List<Usuarios>>> CriarUsuario(string Nome = "", int Idade = 0, string Cpf = "", string Email = "",
             TiposUsuarios Tipo = TiposUsuarios.Paciente)
         {
-            Usuarios user = new Usuarios(Nome, Idade, Cpf, Email, Tipo);
-
-            if (await _context.Usuarios.AnyAsync(u => u.Email == user.Email))
-            {
-                throw new InvalidOperationException("Email já existente.");
-            }
-
-            if (await _context.Usuarios.AnyAsync(u => u.Cpf == user.Cpf))
-            {
-                throw new InvalidOperationException("CPF já existente.");
-            }
-
-            await _context.Usuarios.AddAsync(user);
-            await _context.SaveChangesAsync();
-
-            return Ok(user);
+            return Ok(await _services.CriarUsuario(Nome, Idade, Cpf, Email, Tipo));
 
         }
 
         [HttpPut]
-        public async Task<JsonResult> EditarUsuario(int UsuarioID, string Nome = "", int Idade = 0, string Cpf = "", string Email = "")
+        public async Task<ActionResult<List<Usuarios>>> EditarUsuario(int UsuarioID, string Nome = "", int Idade = 0, string Cpf = "", string Email = "")
         {
-            var Usuario = await _context.Usuarios.FindAsync(UsuarioID);
-
-            if (Usuario != null) {
-               Usuario.Nome = Nome != "" ? Nome : Usuario.Nome;
-               Usuario.Idade = Idade != 0 ? Idade : Usuario.Idade;
-               Usuario.Cpf = Cpf != "" ? Cpf : Usuario.Cpf;
-               Usuario.Email = Email != string.Empty ? Email : Usuario.Email;
-               _context.Usuarios.Update(Usuario);
-               return Json(Usuario);
-            }
-            return Json(null);
+            return Ok(await _services.EditarUsuario(UsuarioID, Nome, Idade, Cpf, Email));
         }
 
         [HttpDelete]
-        public async Task<bool> ExcluirUsuario(int UsuarioID)
+        public async Task<ActionResult<List<Usuarios>>> ExcluirUsuario(int UsuarioID)
         {
-            var Usuario = await _context.Usuarios.FindAsync(UsuarioID);
-            if (Usuario != null) {
-                _context.Usuarios.Remove(Usuario);
-                return true;
-            }
-            return false;
+            return Ok(await _services.RemoverUsuario(UsuarioID));
         }
     }
 }
