@@ -1,5 +1,5 @@
 ﻿using API_VidaPlus.Models;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore
 
 namespace API_VidaPlus.Data
 {
@@ -10,6 +10,7 @@ namespace API_VidaPlus.Data
         }
 
         public DbSet<Usuarios> Usuarios { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

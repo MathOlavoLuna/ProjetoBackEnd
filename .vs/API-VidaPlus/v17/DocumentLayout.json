@@ -1,25 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\",
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\srmat\\source\\repos\\api-vidaplus\\models\\consultas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:models\\consultas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\user\\desktop\\uninter\\projetobackend\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\srmat\\source\\repos\\api-vidaplus\\models\\agendamedica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:models\\agendamedica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\user\\desktop\\uninter\\projetobackend\\services\\geral\\crudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:services\\geral\\crudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\srmat\\source\\repos\\api-vidaplus\\models\\historicopacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:models\\historicopacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\srmat\\source\\repos\\api-vidaplus\\models\\prescricoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:models\\prescricoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\srmat\\source\\repos\\api-vidaplus\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\user\\desktop\\uninter\\projetobackend\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,17 +22,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "UsuariosController.cs",
-              "DocumentMoniker": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Controllers\\UsuariosController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Controllers\\UsuariosController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsuariosController.cs",
-              "ToolTip": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Controllers\\UsuariosController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Controllers\\UsuariosController.cs",
               "RelativeToolTip": "Controllers\\UsuariosController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAC4AAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAkwBEAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T20:33:02.667Z",
               "IsPinned": true,
@@ -49,53 +41,35 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AgendaMedica.cs",
-              "DocumentMoniker": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Models\\AgendaMedica.cs",
-              "RelativeDocumentMoniker": "Models\\AgendaMedica.cs",
-              "ToolTip": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Models\\AgendaMedica.cs",
-              "RelativeToolTip": "Models\\AgendaMedica.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Title": "CRUDService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Services\\Geral\\CRUDService.cs",
+              "RelativeDocumentMoniker": "Services\\Geral\\CRUDService.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Services\\Geral\\CRUDService.cs",
+              "RelativeToolTip": "Services\\Geral\\CRUDService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T01:21:04.872Z",
+              "WhenOpened": "2025-04-23T13:28:25.821Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HistoricoPacientes.cs",
-              "DocumentMoniker": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Models\\HistoricoPacientes.cs",
-              "RelativeDocumentMoniker": "Models\\HistoricoPacientes.cs",
-              "ToolTip": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Models\\HistoricoPacientes.cs",
-              "RelativeToolTip": "Models\\HistoricoPacientes.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T01:19:35.072Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Consultas.cs",
-              "DocumentMoniker": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Models\\Consultas.cs",
-              "RelativeDocumentMoniker": "Models\\Consultas.cs",
-              "ToolTip": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Models\\Consultas.cs",
-              "RelativeToolTip": "Models\\Consultas.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAzAAAAAAAAAA==",
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "Data\\DataContext.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Uninter\\ProjetoBackEnd\\Data\\DataContext.cs",
+              "RelativeToolTip": "Data\\DataContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T01:18:15.604Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Prescricoes.cs",
-              "DocumentMoniker": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Models\\Prescricoes.cs",
-              "RelativeDocumentMoniker": "Models\\Prescricoes.cs",
-              "ToolTip": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Models\\Prescricoes.cs",
-              "RelativeToolTip": "Models\\Prescricoes.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T01:18:12.269Z",
+              "WhenOpened": "2025-04-21T20:40:14.905Z",
               "EditorCaption": ""
             }
           ]
