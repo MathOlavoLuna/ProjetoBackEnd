@@ -2,6 +2,7 @@
 {
     public enum TiposConsultas
     {
+        None = 0,
         TeleConsulta,
         ConsultaRotina,
         ConsultaUrgente

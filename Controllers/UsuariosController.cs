@@ -11,13 +11,13 @@ namespace API_VidaPlus.Controllers
     [ApiController]
     public class UsuariosController : Controller
     {
-        private readonly UsuariosServices _services;
-        public UsuariosController(UsuariosServices service) { //injeção de dependência;
+        private readonly UsuariosService _services;
+        public UsuariosController(UsuariosService service) { //injeção de dependência;
             _services = service;
         }
 
         [HttpGet]
-        public async Task<ActionResult<RetornoService<Usuarios>>> RetornarUsuarios()
+        public async Task<ActionResult<List<Usuarios>>> RetornarUsuarios()
         {
             return Ok(await _services.RetornaUsuarios());
         }

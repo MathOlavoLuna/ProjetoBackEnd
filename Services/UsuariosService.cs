@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API_VidaPlus.Services
 {
-    public class UsuariosServices 
+    public class UsuariosService 
     {
         private readonly DataContext _context;
         private readonly CRUDService<Usuarios> _crud;
-        public UsuariosServices(DataContext context, CRUDService<Usuarios> crud)
+        public UsuariosService(DataContext context, CRUDService<Usuarios> crud)
         { 
             _context = context;
             _crud = crud;

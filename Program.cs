@@ -19,7 +19,8 @@ builder.Services.AddDbContext<DataContext>(opt =>
   )
 );
 builder.Services.AddScoped(typeof(CRUDService<>));
-builder.Services.AddScoped<UsuariosServices>();
+builder.Services.AddScoped<UsuariosService>();
+builder.Services.AddScoped<ConsultasService>();
 
 var app = builder.Build();
 
