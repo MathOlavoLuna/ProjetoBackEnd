@@ -3,9 +3,9 @@
     public class Prescricoes
     {
         public int Id { get; set; }
-        public string Descricao {  get; set; }
-        public Usuarios MedicoId { get; set; }
-        public Hospital HospitalId { get; set; }
+        public string Descricao { get; set; } = string.Empty;
+        public int MedicoId { get; set; }
+        public int HospitalId { get; set; }
 
     }
 }

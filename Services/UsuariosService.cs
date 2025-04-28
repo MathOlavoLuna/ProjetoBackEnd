@@ -51,12 +51,12 @@ namespace API_VidaPlus.Services
             }
         }
 
-        public async Task<RetornoApi<Usuarios>> CriarUsuario(string Nome = "", int Idade = 0, string Cpf = "", string Email = "",
+        public async Task<RetornoApi<Usuarios>> CriarUsuario(string Nome, int Idade, string Senha, string Cpf, string Email,
             TiposUsuarios Tipo = TiposUsuarios.Paciente)
         {
             try
             {
-                Usuarios Usuario = new Usuarios(Nome, Idade, Cpf, Email, Tipo);
+                Usuarios Usuario = new Usuarios(Nome, Idade, Senha, Cpf, Email, Tipo);
 
                 if (await _context.Usuarios.AnyAsync(u => u.Email == Usuario.Email))
                 {
@@ -84,8 +84,8 @@ namespace API_VidaPlus.Services
             }
         }
 
-        public async Task<RetornoApi<Usuarios>> EditarUsuario(int UsuarioID, string Nome = "", int Idade = 0, string Cpf = "", 
-            string Email = "")
+        public async Task<RetornoApi<Usuarios>> EditarUsuario(int UsuarioID, string Nome, int Idade, string Cpf, 
+            string Email)
         {
             try
             {

@@ -22,17 +22,18 @@ namespace API_VidaPlus.Controllers
             return Ok(await _services.RetornaUsuarios());
         }
 
+        //[Route("id")]
         //[HttpGet]
-        //public async Task<ActionResult<RetornoService<Usuarios>>> RetornarUsuario(int Id)
+        //public async Task<ActionResult<List<Usuarios>>> RetornarUsuario(int Id)
         //{
         //    return Ok(await _services.RetornaUsuarioID(Id));
         //}
 
         [HttpPost]
-        public async Task<ActionResult<List<Usuarios>>> CriarUsuario(string Nome = "", int Idade = 0, string Cpf = "", string Email = "",
+        public async Task<ActionResult<List<Usuarios>>> CriarUsuario(string Nome = "", int Idade = 0, string Senha = "", string Cpf = "", string Email = "",
             TiposUsuarios Tipo = TiposUsuarios.Paciente)
         {
-            return Ok(await _services.CriarUsuario(Nome, Idade, Cpf, Email, Tipo));
+            return Ok(await _services.CriarUsuario(Nome, Idade,Senha, Cpf, Email, Tipo));
 
         }
 

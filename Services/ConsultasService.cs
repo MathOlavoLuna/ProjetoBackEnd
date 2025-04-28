@@ -16,38 +16,7 @@ namespace API_VidaPlus.Services
         }
 
         readonly RetornoApi<Consultas> Response = new();
-        //public async Task<RetornoApi<Consultas>> RetornaUsuarios()
-        //{
-        //    try
-        //    {
-        //        Response.Data = await _crud.ReadAll();
-        //        Response.Sucesso = true;
-        //        Response.Mensagem = "Exibindo Usuários";
-        //        return Response;
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Response.Erro = $"Erro: Falha ao exibir Usuários: {e.Message}";
-        //        return Response;
-        //    }
-        //}
-
-        //public async Task<RetornoApi<Usuarios>> RetornaUsuarioID(int Id)
-        //{
-        //    try
-        //    {
-        //        Response.Data = [await _crud.ReadId(Id)];
-        //        Response.Sucesso = true;
-        //        Response.Mensagem = "Exibindo Usuário";
-        //        return Response;
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Response.Erro = $"Erro: Falha ao exibir Usuário: {e.Message}";
-        //        return Response;
-        //    }
-        //}
-
+      
         public async Task<RetornoApi<Consultas>> MarcarConsulta(TiposConsultas Tipo, int PacienteId, int MedicoId, DateTime MarcadoPara)
         {
             try
@@ -97,28 +66,5 @@ namespace API_VidaPlus.Services
                 return Response;
             }
         }
-
-        //public async Task<RetornoApi<Usuarios>> RemoverUsuario(int UsuarioID)
-        //{
-        //    try
-        //    {
-        //        var Usuario = await _context.Usuarios.FindAsync(UsuarioID);
-        //        if (Usuario != null)
-        //        {
-
-        //            Response.Data = [await _crud.Delete(Usuario)];
-        //            Response.Sucesso = true;
-        //            Response.Mensagem = "Usuário removido com sucesso.";
-        //            return Response;
-        //        }
-        //        Response.Erro = "Erro: Usuário não encontrado";
-        //        return Response;
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Response.Erro = $"Erro: {e.Message}";
-        //        return Response;
-        //    }
-        //}
     }
 }
