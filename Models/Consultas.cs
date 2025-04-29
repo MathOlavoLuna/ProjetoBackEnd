@@ -1,4 +1,6 @@
-﻿namespace API_VidaPlus.Models
+﻿using System.Text.Json.Serialization;
+
+namespace API_VidaPlus.Models
 {
     public class Consultas
     {
@@ -6,9 +8,12 @@
         public TiposConsultas Tipo { get; set; }
 
         public  int PacienteId { get; set; } = 0;
+        [JsonIgnore]
         public Usuarios? Paciente { get; set; }
 
         public int MedicoId { get; set; } = 0;
+
+        [JsonIgnore]
         public Usuarios? Medico { get; set; }
 
         public DateTime MarcadoPara { get; set; }

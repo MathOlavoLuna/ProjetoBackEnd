@@ -1,4 +1,5 @@
-﻿using API_VidaPlus.Models;
+﻿using API_VidaPlus.Data;
+using API_VidaPlus.Models;
 using API_VidaPlus.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,14 +10,16 @@ namespace API_VidaPlus.Controllers
     public class PrescricoesController : Controller
     {
         private readonly PrescricoesService _service;
-        public PrescricoesController(PrescricoesService service) { 
+        private readonly DataContext _context;
+        public PrescricoesController(PrescricoesService service, DataContext context) { 
             _service = service;
+            _context = context;
         }
 
         [HttpPost]
-        public async Task<ActionResult<Prescricoes>> CriarPrescricao(string Descricao, int MedicoId, int HospitalId)
+        public async Task<ActionResult<Prescricoes>> CriarPrescricao(int ConsultaId, string Descricao, int MedicoId, int HospitalId)
         {
-            return Ok(await _service.Prescrever(MedicoId, HospitalId, Descricao));
+            return Ok(await _service.Prescrever(ConsultaId, MedicoId, HospitalId, Descricao));
         }
     }
 }
