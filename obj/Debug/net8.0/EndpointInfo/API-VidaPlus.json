@@ -6,6 +6,42 @@
   },
   "paths": {
     "/api/Consultas": {
+      "get": {
+        "tags": [
+          "Consultas"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Consultas"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Consultas"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Consultas"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "post": {
         "tags": [
           "Consultas"
@@ -15,7 +51,13 @@
             "name": "Tipo",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/TiposConsultas"
+              "enum": [
+                "None",
+                "TeleConsulta",
+                "ConsultaRotina",
+                "ConsultaUrgente"
+              ],
+              "type": "string"
             }
           },
           {
@@ -87,6 +129,80 @@
               "type": "integer",
               "format": "int32"
             }
+          },
+          {
+            "name": "MarcadoPara",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "Compareceu",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "Tipo",
+            "in": "query",
+            "schema": {
+              "enum": [
+                "None",
+                "TeleConsulta",
+                "ConsultaRotina",
+                "ConsultaUrgente"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Consultas"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Consultas"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Consultas"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Consultas"
+        ],
+        "parameters": [
+          {
+            "name": "ConsultaId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
           }
         ],
         "responses": {
@@ -123,11 +239,46 @@
       }
     },
     "/api/Prescricoes": {
+      "get": {
+        "tags": [
+          "Prescricoes"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Prescricoes"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Prescricoes"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Prescricoes"
+                }
+              }
+            }
+          }
+        }
+      },
       "post": {
         "tags": [
           "Prescricoes"
         ],
         "parameters": [
+          {
+            "name": "ConsultaId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
           {
             "name": "Descricao",
             "in": "query",
@@ -263,7 +414,16 @@
             "name": "Tipo",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/TiposUsuarios"
+              "enum": [
+                "Paciente",
+                "Médico",
+                "Enfermeiro",
+                "Tecnico",
+                "Desenvolvedor",
+                "Gerente"
+              ],
+              "type": "string",
+              "default": "Paciente"
             }
           }
         ],
@@ -424,54 +584,6 @@
           }
         }
       }
-    },
-    "/api/Usuarios/id": {
-      "get": {
-        "tags": [
-          "Usuarios"
-        ],
-        "parameters": [
-          {
-            "name": "Id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Usuarios"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Usuarios"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Usuarios"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
     }
   },
   "components": {
@@ -485,21 +597,21 @@
             "nullable": true
           },
           "tipo": {
-            "$ref": "#/components/schemas/TiposConsultas"
+            "enum": [
+              "None",
+              "TeleConsulta",
+              "ConsultaRotina",
+              "ConsultaUrgente"
+            ],
+            "type": "string"
           },
           "pacienteId": {
             "type": "integer",
             "format": "int32"
           },
-          "paciente": {
-            "$ref": "#/components/schemas/Usuarios"
-          },
           "medicoId": {
             "type": "integer",
             "format": "int32"
-          },
-          "medico": {
-            "$ref": "#/components/schemas/Usuarios"
           },
           "marcadoPara": {
             "type": "string",
@@ -537,28 +649,6 @@
         },
         "additionalProperties": false
       },
-      "TiposConsultas": {
-        "enum": [
-          0,
-          1,
-          2,
-          3
-        ],
-        "type": "integer",
-        "format": "int32"
-      },
-      "TiposUsuarios": {
-        "enum": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "type": "integer",
-        "format": "int32"
-      },
       "Usuarios": {
         "type": "object",
         "properties": {
@@ -587,7 +677,15 @@
             "nullable": true
           },
           "tipo": {
-            "$ref": "#/components/schemas/TiposUsuarios"
+            "enum": [
+              "Paciente",
+              "Médico",
+              "Enfermeiro",
+              "Tecnico",
+              "Desenvolvedor",
+              "Gerente"
+            ],
+            "type": "string"
           },
           "consultasPaciente": {
             "type": "array",
