@@ -1,50 +1,44 @@
-# .NET 8 .gitignore
+# .NET 8 .gitignore (Oficial + ajustes)
 
-# General .NET ignores
+# Arquivos gerados pelo .NET
 [Bb]in/
 [Oo]bj/
-*.user
-*.suo
-*.userprefs
+**/[Dd]ebug/
+**/[Dd]ebugPublic/
+**/[Rr]elease/
+**/[Rr]eleases/
+**/x64/
+**/x86/
+**/[Aa][Rr][Mm]/
+**/[Aa][Rr][Mm]64/
+**/bld/
+**/publish/
+**/artifacts/
 *.nupkg
+*.suo
+*.user
+*.userprefs
 *.njsproj
-*.swp
-*.swo
-packages/
-.nuget/
-artifacts/
+*.log
+*.dotnet
+
+# IDEs e editores
 .vs/
-.dotnet/
-
-# Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]inaries/
-[Oo]bj/
-
-# IDE specific files
-.idea/
 .vscode/
+.idea/
 *.code-workspace
+*.sln.iml
+*.DotSettings.user
 
-# Test files and results
+# Testes e cobertura
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 *.trx
 coverage/
-coverage.*.json
 *.coverage
 *.coveragexml
-*.runsettings
 
-# Front-end dependencies (if applicable)
+# Front-end
 node_modules/
 wwwroot/lib/
 dist/
@@ -52,95 +46,46 @@ out/
 .cache/
 .angular/
 
-# Environment files
+# Ambiente e secrets
 .env
 .env.local
-.env.development
-.env.production
-appsettings.Development.json
+.env.*.local
 secrets.json
+appsettings.*.json
+!appsettings.json
+!appsettings.Development.json  # Mantém o padrão versionado
 
 # Docker
 .dockerignore
 docker-compose.override.yml
-docker-compose.vs.debug.g.yml
 
-# Local development files
-*.back
-*.bak
+# NuGet e pacotes
+.nuget/
+packages/
+**/NuGet.Config
+
+# Arquivos temporários e de backup
 *.tmp
-*.orig
+*.bak
+*.swp
+*.swo
+*.back
 
-# Build output
-*.log
-*.dll
-*.pdb
-*.exe
-*.ilk
-*.meta
-*.csv
-*.xml
+# Sistemas operacionais
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.Trash-*
 
-# NuGet
-NuGet.Config
+# Azure e configurações de nuvem
+*.pfx
+*.publishsettings
+local.settings.json
 
-# Rider
-*.sln.iml
-
-# VS Code
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
-# VS
+# Outros
 *.psess
 *.vsp
 *.vspx
-
-# macOS
-.DS_Store
-
-# Windows
-Thumbs.db
-
-# Output directory for publish
-publish/
-
-# MSTest
-*.Test.xml
-
-# Package manager files
-packages/
-*.pubxml
-PackageTester/
-
-# JetBrains Rider
-.idea/
-*.sln.iml
-*.DotSettings.user
-
-# Visual Studio cache/options directory
-.vs/
-
-# Microsoft Azure
-*.pfx
-*.publishsettings
-
-# Local History
-.history/
-
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
-
-# Folder config file
-[Dd]esktop.ini
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Linux trash folder
-.Trash-*
-
-# Project specific ignores (add your custom patterns here)
+*.runsettings

@@ -8,10 +8,9 @@ namespace API_VidaPlus.Services
     public class ExamesService
     {
         private readonly CRUDService<Exames> _crud;
-        private readonly ExamesService _service;
-        public ExamesService(ExamesService service, CRUDService<Exames> crud)
+
+        public ExamesService(CRUDService<Exames> crud)
         {
-            _service = service;
             _crud = crud;
         }
 
