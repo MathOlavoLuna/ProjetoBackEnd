@@ -19,13 +19,23 @@ namespace API_VidaPlus.Services
             Exames Exame = new();
             try
             {
-                Exame.Tipo = Tipo;  
-                Exame.Compareceu = Compareceu;
-                Exame.MarcadoPara = MarcadoPara;
+                if(Tipo != null)
+                {
+                    Exame.Tipo = Tipo;
+                    Exame.Compareceu = Compareceu;
+                    Exame.MarcadoPara = MarcadoPara;
+
+                    Response.Sucesso = true;
+                    Response.Data.Add(await _crud.Create(Exame));
+                    Response.Mensagem = "Exame Marcado!";
+                    return Response;
+                }
+                Response.Erro = "Erro: Porfavor preencha todos os campos!";
                 return Response;
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
+                Response.Erro = $"Erro: {e.Message}";
                 return Response;
             }
         }   
