@@ -23,7 +23,7 @@ namespace API_VidaPlus.Services
         {
             try
             {
-                Response.Data = await _context.Usuarios.Include(u => u.ConsultasPaciente).Include(u => u.ConsultasMedico).ToListAsync();
+                Response.Data = await _crud.ReadAll();
                 Response.Sucesso = true;
                 Response.Mensagem = "Exibindo Usuários";
                 return Response;

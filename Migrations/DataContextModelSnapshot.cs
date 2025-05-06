@@ -42,6 +42,9 @@ namespace API_VidaPlus.Migrations
                     b.Property<int>("PacienteId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("PrescricaoId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Tipo")
                         .HasColumnType("int");
 
@@ -51,31 +54,9 @@ namespace API_VidaPlus.Migrations
 
                     b.HasIndex("PacienteId");
 
+                    b.HasIndex("PrescricaoId");
+
                     b.ToTable("Consultas");
-                });
-
-            modelBuilder.Entity("API_VidaPlus.Models.Exames", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("Compareceu")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<DateTime>("MarcadoPara")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("TipoExameId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TipoExameId");
-
-                    b.ToTable("Exames");
                 });
 
             modelBuilder.Entity("API_VidaPlus.Models.Prescricoes", b =>
@@ -85,9 +66,6 @@ namespace API_VidaPlus.Migrations
                         .HasColumnType("int");
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("ConsultaId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Descricao")
                         .IsRequired()
@@ -101,31 +79,7 @@ namespace API_VidaPlus.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ConsultaId")
-                        .IsUnique();
-
                     b.ToTable("Prescricoes");
-                });
-
-            modelBuilder.Entity("API_VidaPlus.Models.TiposExames", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Descritivo")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TiposExames");
                 });
 
             modelBuilder.Entity("API_VidaPlus.Models.Usuarios", b =>
@@ -183,39 +137,15 @@ namespace API_VidaPlus.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("API_VidaPlus.Models.Prescricoes", "Prescricao")
+                        .WithMany()
+                        .HasForeignKey("PrescricaoId");
+
                     b.Navigation("Medico");
 
                     b.Navigation("Paciente");
-                });
 
-            modelBuilder.Entity("API_VidaPlus.Models.Exames", b =>
-                {
-                    b.HasOne("API_VidaPlus.Models.TiposExames", "Tipo")
-                        .WithMany("PertenceExames")
-                        .HasForeignKey("TipoExameId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Tipo");
-                });
-
-            modelBuilder.Entity("API_VidaPlus.Models.Prescricoes", b =>
-                {
-                    b.HasOne("API_VidaPlus.Models.Consultas", "PertenceConsulta")
-                        .WithOne("Prescricao")
-                        .HasForeignKey("API_VidaPlus.Models.Prescricoes", "ConsultaId");
-
-                    b.Navigation("PertenceConsulta");
-                });
-
-            modelBuilder.Entity("API_VidaPlus.Models.Consultas", b =>
-                {
                     b.Navigation("Prescricao");
-                });
-
-            modelBuilder.Entity("API_VidaPlus.Models.TiposExames", b =>
-                {
-                    b.Navigation("PertenceExames");
                 });
 
             modelBuilder.Entity("API_VidaPlus.Models.Usuarios", b =>
