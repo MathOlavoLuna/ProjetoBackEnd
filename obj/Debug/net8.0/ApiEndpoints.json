@@ -124,32 +124,6 @@
   },
   {
     "ContainingType": "API_VidaPlus.Controllers.UsuariosController",
-    "Method": "RetornarUsuario",
-    "RelativePath": "api/Usuarios",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[API_VidaPlus.Models.Usuarios, API-VidaPlus, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "API_VidaPlus.Controllers.UsuariosController",
     "Method": "CriarUsuario",
     "RelativePath": "api/Usuarios",
     "HttpMethod": "POST",

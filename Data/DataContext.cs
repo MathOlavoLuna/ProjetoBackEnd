@@ -11,7 +11,6 @@ namespace API_VidaPlus.Data
 
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<Consultas> Consultas { get; set; }
-
         public DbSet<Prescricoes> Prescricoes { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
