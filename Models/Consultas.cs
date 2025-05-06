@@ -17,6 +17,7 @@ namespace API_VidaPlus.Models
         public Usuarios? Medico { get; set; }
 
         public DateTime MarcadoPara { get; set; }
+
         public Prescricoes? Prescricao { get; set; }
         public bool? Compareceu { get; set; }    
     }

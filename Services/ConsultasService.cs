@@ -2,6 +2,8 @@
 using API_VidaPlus.Data;
 using API_VidaPlus.Models;
 using API_VidaPlus.Services.Geral;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 
 namespace API_VidaPlus.Services
 {
@@ -17,6 +19,13 @@ namespace API_VidaPlus.Services
 
         readonly RetornoApi<Consultas> Response = new();
 
+      public async Task<RetornoApi<Consultas>> ExibirConsultas()
+        {
+            Response.Sucesso = true;
+            Response.Mensagem = "Exibindo todas consultas";
+            Response.Data = await _context.Consultas.Include(c => c.Prescricao).ToListAsync();
+            return Response;
+        }
         public async Task<RetornoApi<Consultas>> MarcarConsulta(TiposConsultas Tipo, int PacienteId, int MedicoId, DateTime MarcadoPara)
         {
             try

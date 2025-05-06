@@ -1,6 +1,26 @@
 [
   {
     "ContainingType": "API_VidaPlus.Controllers.ConsultasController",
+    "Method": "ExibirConsultas",
+    "RelativePath": "api/Consultas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[API_VidaPlus.Models.Consultas, API-VidaPlus, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_VidaPlus.Controllers.ConsultasController",
     "Method": "CriarConsulta",
     "RelativePath": "api/Consultas",
     "HttpMethod": "POST",
@@ -98,6 +118,26 @@
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.List\u00601[[API_VidaPlus.Models.Consultas, API-VidaPlus, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_VidaPlus.Controllers.PrescricoesController",
+    "Method": "ExibirPrescricoes",
+    "RelativePath": "api/Prescricoes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "API_VidaPlus.Models.Prescricoes",
         "MediaTypes": [
           "text/plain",
           "application/json",

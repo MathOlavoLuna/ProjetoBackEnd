@@ -15,6 +15,11 @@ namespace API_VidaPlus.Controllers
             _service = service;
             _context = context;
         }
+        [HttpGet]
+        public async Task<ActionResult<Prescricoes>> ExibirPrescricoes()
+        {
+            return Ok(await _service.ExibirTodasPrescricoes());
+        }
 
         [HttpPost]
         public async Task<ActionResult<Prescricoes>> CriarPrescricao(int ConsultaId, string Descricao, int MedicoId, int HospitalId)

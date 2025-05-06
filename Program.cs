@@ -31,6 +31,7 @@ builder.Services.AddScoped(typeof(CRUDService<>));
 builder.Services.AddScoped<UsuariosService>();
 builder.Services.AddScoped<ConsultasService>();
 builder.Services.AddScoped<PrescricoesService>();
+builder.Services.AddScoped<ExamesService>();
 
 var app = builder.Build();
 

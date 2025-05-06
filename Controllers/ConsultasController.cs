@@ -13,6 +13,12 @@ namespace API_VidaPlus.Controllers
             _service = service;
         }
 
+        [HttpGet]
+        public async Task<ActionResult<List<Consultas>>> ExibirConsultas()
+        {
+            return Ok(await _service.ExibirConsultas());
+        }
+
         [HttpPost]
         public async Task<ActionResult<List<Consultas>>> CriarConsulta(TiposConsultas Tipo, int PacienteId, int MedicoId, DateTime MarcadoPara)
         {
