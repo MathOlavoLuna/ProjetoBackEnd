@@ -226,4 +226,8 @@ C:\Users\User\Desktop\Uninter\ProjetoBackEnd\obj\Debug\net8.0\API-VidaPlus.pdb
 C:\Users\User\Desktop\Uninter\ProjetoBackEnd\obj\Debug\net8.0\API-VidaPlus.genruntimeconfig.cache
 C:\Users\User\Desktop\Uninter\ProjetoBackEnd\obj\Debug\net8.0\ref\API-VidaPlus.dll
 C:\Users\SrMat\source\repos\API-VidaPlus\obj\Debug\net8.0\API-VidaPlus.sourcelink.json
+<<<<<<< HEAD
 C:\Users\SrMat\source\repos\API-VidaPlus\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+=======
+C:\Users\User\Desktop\Uninter\ProjetoBackEnd\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+>>>>>>> 70a079e0a7de894eba18a10bc0a32f3f31bb7f2b

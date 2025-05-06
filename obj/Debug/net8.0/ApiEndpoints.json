@@ -1,6 +1,26 @@
 [
   {
     "ContainingType": "API_VidaPlus.Controllers.ConsultasController",
+    "Method": "ExibirConsultas",
+    "RelativePath": "api/Consultas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[API_VidaPlus.Models.Consultas, API-VidaPlus, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_VidaPlus.Controllers.ConsultasController",
     "Method": "CriarConsulta",
     "RelativePath": "api/Consultas",
     "HttpMethod": "POST",
@@ -42,9 +62,50 @@
   },
   {
     "ContainingType": "API_VidaPlus.Controllers.ConsultasController",
-    "Method": "EditarUsuario",
+    "Method": "EditarConsulta",
     "RelativePath": "api/Consultas",
     "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ConsultaId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "MarcadoPara",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "Compareceu",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Tipo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[API_VidaPlus.Models.Consultas, API-VidaPlus, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_VidaPlus.Controllers.ConsultasController",
+    "Method": "DeletarConsulta",
+    "RelativePath": "api/Consultas",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -68,12 +129,37 @@
   },
   {
     "ContainingType": "API_VidaPlus.Controllers.PrescricoesController",
+    "Method": "ExibirPrescricoes",
+    "RelativePath": "api/Prescricoes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "API_VidaPlus.Models.Prescricoes",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_VidaPlus.Controllers.PrescricoesController",
     "Method": "CriarPrescricao",
     "RelativePath": "api/Prescricoes",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
+      {
+        "Name": "ConsultaId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
       {
         "Name": "Descricao",
         "Type": "System.String",
