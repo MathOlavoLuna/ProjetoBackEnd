@@ -14,6 +14,11 @@ namespace API_VidaPlus.Controllers
         {
             _service = service;
         }
+        [HttpGet]
+        public async Task<ActionResult<TiposExames>> ExibirTiposExames()
+        {
+            return Ok(await _service.ExibirTiposExames());
+        }
 
         [HttpPost]
         public async Task<ActionResult<TiposExames>> CriarTipoExame(string Nome, string Descritivo)

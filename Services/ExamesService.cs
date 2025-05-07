@@ -67,6 +67,22 @@ namespace API_VidaPlus.Services
                 return Response;
             }
         }
+
+        public async Task<RetornoApi<Exames>> ExibirExames()
+        {
+            try
+            {
+                Response.Data = await _crud.ReadAll();
+                Response.Sucesso = true;
+                Response.Mensagem = "Exibindo Exames";
+                return Response;
+            }
+            catch (Exception e)
+            {
+                Response.Erro = $"Erro: falha ao buscar exames: {e.Message}";
+                return Response;
+            }
+        }
     } 
 }
 

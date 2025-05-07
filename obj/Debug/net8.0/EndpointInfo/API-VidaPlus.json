@@ -239,6 +239,33 @@
       }
     },
     "/api/Exames": {
+      "get": {
+        "tags": [
+          "Exames"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Exames"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Exames"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Exames"
+                }
+              }
+            }
+          }
+        }
+      },
       "post": {
         "tags": [
           "Exames"

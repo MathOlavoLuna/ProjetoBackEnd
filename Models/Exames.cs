@@ -7,5 +7,10 @@
         public TiposExames Tipo { get; set; }
         public DateTime MarcadoPara { get; set; }
         public bool Compareceu { get; set; } = false;
+
+
+        public int? ProntuarioId { get; set; }
+        public Prontuarios? ParticipaProntuario { get; set; }
+
     }
 }

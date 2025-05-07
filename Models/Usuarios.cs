@@ -17,5 +17,9 @@ namespace API_VidaPlus.Models
         public ICollection<Consultas>? ConsultasPaciente { get; set; }
 
         public ICollection<Consultas>? ConsultasMedico { get; set; }
+
+        public int? ProntuarioId { get; set; }
+        [JsonIgnore]
+        public Prontuarios? ParticipaProntuario { get; set; }
     }
 }

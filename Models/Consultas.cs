@@ -19,6 +19,12 @@ namespace API_VidaPlus.Models
         public DateTime MarcadoPara { get; set; }
 
         public Prescricoes? Prescricao { get; set; }
-        public bool? Compareceu { get; set; }    
+        public bool? Compareceu { get; set; }
+
+
+
+        public int? ProntuarioId { get; set; }
+        [JsonIgnore]
+        public Prontuarios? ParticipaProntuario { get; set; }
     }
 }

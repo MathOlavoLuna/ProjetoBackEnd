@@ -129,6 +129,26 @@
   },
   {
     "ContainingType": "API_VidaPlus.Controllers.ExamesController",
+    "Method": "ExibirExames",
+    "RelativePath": "api/Exames",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "API_VidaPlus.Models.Exames",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_VidaPlus.Controllers.ExamesController",
     "Method": "CriarExame",
     "RelativePath": "api/Exames",
     "HttpMethod": "POST",

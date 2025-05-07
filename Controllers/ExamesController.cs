@@ -9,10 +9,17 @@ namespace API_VidaPlus.Controllers
     public class ExamesController : Controller
     {
         private readonly ExamesService _service;
-        public ExamesController (ExamesService service)
+        public ExamesController (ExamesService service) 
         {
             _service = service;
         }
+
+        [HttpGet]
+        public async Task<ActionResult<Exames>> ExibirExames()
+        {
+            return Ok(await _service.ExibirExames());
+        }
+
         [HttpPost]
         public async Task<ActionResult<Exames>> CriarExame(int TipoExameId, DateTime MarcadoPara)
         {

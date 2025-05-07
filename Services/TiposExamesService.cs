@@ -3,6 +3,7 @@ using API_VidaPlus.Data;
 using API_VidaPlus.Models;
 using API_VidaPlus.Services.Geral;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API_VidaPlus.Services
 {
@@ -43,6 +44,22 @@ namespace API_VidaPlus.Services
             {
                 Response.Erro = $"Erro: Falha ao criar Tipo de Exame {e.Message}";
                 return Response;
+            }
+        }
+
+        public async Task<RetornoApi<TiposExames>> ExibirTiposExames()
+        {
+            try
+            {
+                Response.Data = await _context.TiposExames.Include(te => te.PertenceExames).ToListAsync();
+                Response.Sucesso = true;
+                Response.Mensagem = "Exibindo Tipos de Exames";
+                return Response;
+            }
+            catch(Exception e)
+            {
+                Response.Erro = $"Erro: falha ao exibir Tipos de Exames: {e.Message}";
+                return Response;    
             }
         }
     }

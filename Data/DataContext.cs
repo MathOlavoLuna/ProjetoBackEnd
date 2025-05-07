@@ -14,6 +14,7 @@ namespace API_VidaPlus.Data
         public DbSet<Prescricoes> Prescricoes { get; set; }
         public DbSet<Exames> Exames { get; set; }   
         public DbSet<TiposExames> TiposExames { get; set; }
+
         public DbSet<Prontuarios> Prontuarios { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -40,10 +41,30 @@ namespace API_VidaPlus.Data
                .IsUnique();
 
             //Exames
+            
+
             modelBuilder.Entity<Exames>()
                 .HasOne(e  => e.Tipo)
                 .WithMany(te => te.PertenceExames)
                 .HasForeignKey(e => e.TipoExameId);
+
+
+            //Prontuarios
+            modelBuilder.Entity<Exames>()
+                .HasOne(e => e.ParticipaProntuario)
+                .WithMany(p => p.ExamesPaciente)
+                .HasForeignKey(p => p.ProntuarioId);
+
+            modelBuilder.Entity<Consultas>() //diz que Prontuario vai ter muitas consultas, mas que uma consulta pertence a um prontuario.
+                .HasOne(c => c.ParticipaProntuario)
+                .WithMany(p => p.ConsultasPaciente)
+                .HasForeignKey(c => c.ProntuarioId);
+
+            modelBuilder.Entity<Usuarios>()
+                .HasOne(u => u.ParticipaProntuario)
+                .WithOne(p => p.Paciente)
+                .HasForeignKey<Prontuarios>(p => p.PacienteId);
+
 
             // Define a unique constraint for the "Email" property
             modelBuilder.Entity<Usuarios>()
