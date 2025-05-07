@@ -128,6 +128,63 @@
     ]
   },
   {
+    "ContainingType": "API_VidaPlus.Controllers.ExamesController",
+    "Method": "CriarExame",
+    "RelativePath": "api/Exames",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TipoExameId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "MarcadoPara",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_VidaPlus.Models.Exames",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_VidaPlus.Controllers.ExamesController",
+    "Method": "EditarExame",
+    "RelativePath": "api/Exames",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ExameID",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_VidaPlus.Models.Exames",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "API_VidaPlus.Controllers.PrescricoesController",
     "Method": "ExibirPrescricoes",
     "RelativePath": "api/Prescricoes",
@@ -179,6 +236,37 @@
     "ReturnTypes": [
       {
         "Type": "API_VidaPlus.Models.Prescricoes",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_VidaPlus.Controllers.TiposExamesController",
+    "Method": "CriarTipoExame",
+    "RelativePath": "api/TiposExames",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Nome",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descritivo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_VidaPlus.Models.TiposExames",
         "MediaTypes": [
           "text/plain",
           "application/json",

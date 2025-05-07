@@ -14,6 +14,7 @@ namespace API_VidaPlus.Data
         public DbSet<Prescricoes> Prescricoes { get; set; }
         public DbSet<Exames> Exames { get; set; }   
         public DbSet<TiposExames> TiposExames { get; set; }
+        public DbSet<Prontuarios> Prontuarios { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

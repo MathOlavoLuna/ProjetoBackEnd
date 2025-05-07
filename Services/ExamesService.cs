@@ -1,28 +1,31 @@
 ﻿using API_VidaPlus.Classes;
+using API_VidaPlus.Data;
 using API_VidaPlus.Models;
 using API_VidaPlus.Services.Geral;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 
 namespace API_VidaPlus.Services
 {
     public class ExamesService
     {
+        private readonly DataContext _context;
         private readonly CRUDService<Exames> _crud;
 
-        public ExamesService(CRUDService<Exames> crud)
+        public ExamesService(CRUDService<Exames> crud, DataContext context)
         {
+            _context = context;
             _crud = crud;
         }
 
         readonly RetornoApi<Exames> Response = new();
-        public async Task<RetornoApi<Exames>> MarcarExame(TiposExames Tipo, bool Compareceu, DateTime MarcadoPara) {
+        public async Task<RetornoApi<Exames>> MarcarExame(int TipoExameId, DateTime MarcadoPara) {
             Exames Exame = new();
             try
             {
-                if(Tipo != null)
+                if(TipoExameId != 0)
                 {
-                    Exame.Tipo = Tipo;
-                    Exame.Compareceu = Compareceu;
+                    Exame.TipoExameId = TipoExameId;
                     Exame.MarcadoPara = MarcadoPara;
 
                     Response.Sucesso = true;
@@ -39,6 +42,31 @@ namespace API_VidaPlus.Services
                 return Response;
             }
         }   
+
+        public async Task<RetornoApi<Exames>> ComparecerExame(int ExameID)
+        {
+            try
+            {
+                var Exame = await _context.Exames.FindAsync(ExameID);
+
+                if(Exame != null)
+                {
+                    Exame.Compareceu = true;
+
+                    _context.SaveChanges();
+                    Response.Sucesso = true;
+                    Response.Data.Add(Exame);
+                    return Response;
+                }
+                Response.Erro = "Erro: Exame não encontrado !";
+                return Response;
+            }
+            catch (Exception e) 
+            {
+                Response.Erro = $"Erro: Falha ao procurar exame: {e.Message}";
+                return Response;
+            }
+        }
     } 
 }
 

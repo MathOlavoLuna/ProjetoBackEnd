@@ -6,6 +6,6 @@
         public int TipoExameId { get; set; }
         public TiposExames Tipo { get; set; }
         public DateTime MarcadoPara { get; set; }
-        public bool Compareceu { get; set; }
+        public bool Compareceu { get; set; } = false;
     }
 }

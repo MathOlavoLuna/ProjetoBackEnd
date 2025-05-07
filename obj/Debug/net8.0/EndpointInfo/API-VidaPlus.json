@@ -238,6 +238,90 @@
         }
       }
     },
+    "/api/Exames": {
+      "post": {
+        "tags": [
+          "Exames"
+        ],
+        "parameters": [
+          {
+            "name": "TipoExameId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "MarcadoPara",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Exames"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Exames"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Exames"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Exames"
+        ],
+        "parameters": [
+          {
+            "name": "ExameID",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Exames"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Exames"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Exames"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Prescricoes": {
       "get": {
         "tags": [
@@ -320,6 +404,51 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Prescricoes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TiposExames": {
+      "post": {
+        "tags": [
+          "TiposExames"
+        ],
+        "parameters": [
+          {
+            "name": "Nome",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Descritivo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TiposExames"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TiposExames"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TiposExames"
                 }
               }
             }
@@ -627,6 +756,30 @@
         },
         "additionalProperties": false
       },
+      "Exames": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipoExameId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipo": {
+            "$ref": "#/components/schemas/TiposExames"
+          },
+          "marcadoPara": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "compareceu": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
       "Prescricoes": {
         "type": "object",
         "properties": {
@@ -645,6 +798,31 @@
           "hospitalId": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TiposExames": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "descritivo": {
+            "type": "string",
+            "nullable": true
+          },
+          "pertenceExames": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Exames"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
