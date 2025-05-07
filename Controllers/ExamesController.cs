@@ -21,9 +21,9 @@ namespace API_VidaPlus.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Exames>> CriarExame(int TipoExameId, DateTime MarcadoPara)
+        public async Task<ActionResult<Exames>> CriarExame(int TipoExameId, DateTime MarcadoPara, int PacienteId)
         {
-            return Ok(await _service.MarcarExame(TipoExameId, MarcadoPara));
+            return Ok(await _service.MarcarExame(TipoExameId, MarcadoPara, PacienteId));
         }
 
         [HttpPut]

@@ -286,6 +286,14 @@
               "type": "string",
               "format": "date-time"
             }
+          },
+          {
+            "name": "PacienteId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
           }
         ],
         "responses": {
@@ -438,7 +446,107 @@
         }
       }
     },
+    "/api/Prontuarios": {
+      "get": {
+        "tags": [
+          "Prontuarios"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Prontuarios"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Prontuarios"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Prontuarios"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Prontuarios"
+        ],
+        "parameters": [
+          {
+            "name": "Descritivo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PacienteId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetornoProntuario"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetornoProntuario"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetornoProntuario"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/TiposExames": {
+      "get": {
+        "tags": [
+          "TiposExames"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TiposExames"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TiposExames"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TiposExames"
+                }
+              }
+            }
+          }
+        }
+      },
       "post": {
         "tags": [
           "TiposExames"
@@ -779,6 +887,11 @@
           "compareceu": {
             "type": "boolean",
             "nullable": true
+          },
+          "prontuarioId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -803,6 +916,21 @@
           },
           "compareceu": {
             "type": "boolean"
+          },
+          "pacienteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "paciente": {
+            "$ref": "#/components/schemas/Usuarios"
+          },
+          "prontuarioId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "participaProntuario": {
+            "$ref": "#/components/schemas/Prontuarios"
           }
         },
         "additionalProperties": false
@@ -825,6 +953,69 @@
           "hospitalId": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Prontuarios": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descritivo": {
+            "type": "string",
+            "nullable": true
+          },
+          "pacienteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "paciente": {
+            "$ref": "#/components/schemas/Usuarios"
+          },
+          "consultasPaciente": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Consultas"
+            },
+            "nullable": true
+          },
+          "examesPaciente": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Exames"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RetornoProntuario": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nomePaciente": {
+            "type": "string",
+            "nullable": true
+          },
+          "examesPaciente": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Exames"
+            },
+            "nullable": true
+          },
+          "consultasPaciente": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Consultas"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -903,6 +1094,18 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Consultas"
+            },
+            "nullable": true
+          },
+          "prontuarioId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "examesPaciente": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Exames"
             },
             "nullable": true
           }

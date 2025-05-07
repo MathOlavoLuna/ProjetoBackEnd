@@ -164,6 +164,11 @@
         "Name": "MarcadoPara",
         "Type": "System.DateTime",
         "IsRequired": false
+      },
+      {
+        "Name": "PacienteId",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
@@ -256,6 +261,77 @@
     "ReturnTypes": [
       {
         "Type": "API_VidaPlus.Models.Prescricoes",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_VidaPlus.Controllers.ProntuariosController",
+    "Method": "ExibirProntuario",
+    "RelativePath": "api/Prontuarios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "API_VidaPlus.Models.Prontuarios",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_VidaPlus.Controllers.ProntuariosController",
+    "Method": "CriarPronturario",
+    "RelativePath": "api/Prontuarios",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Descritivo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PacienteId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_VidaPlus.Classes.RetornoProntuario",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_VidaPlus.Controllers.TiposExamesController",
+    "Method": "ExibirTiposExames",
+    "RelativePath": "api/TiposExames",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "API_VidaPlus.Models.TiposExames",
         "MediaTypes": [
           "text/plain",
           "application/json",

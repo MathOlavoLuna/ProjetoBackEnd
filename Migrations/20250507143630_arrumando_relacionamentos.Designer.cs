@@ -4,6 +4,7 @@ using API_VidaPlus.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API_VidaPlus.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20250507143630_arrumando_relacionamentos")]
+    partial class arrumando_relacionamentos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,7 +59,7 @@ namespace API_VidaPlus.Migrations
 
                     b.HasIndex("ProntuarioId");
 
-                    b.ToTable("Consultas", (string)null);
+                    b.ToTable("Consultas");
                 });
 
             modelBuilder.Entity("API_VidaPlus.Models.Exames", b =>
@@ -85,7 +88,7 @@ namespace API_VidaPlus.Migrations
 
                     b.HasIndex("TipoExameId");
 
-                    b.ToTable("Exames", (string)null);
+                    b.ToTable("Exames");
                 });
 
             modelBuilder.Entity("API_VidaPlus.Models.Prescricoes", b =>
@@ -114,7 +117,7 @@ namespace API_VidaPlus.Migrations
                     b.HasIndex("ConsultaId")
                         .IsUnique();
 
-                    b.ToTable("Prescricoes", (string)null);
+                    b.ToTable("Prescricoes");
                 });
 
             modelBuilder.Entity("API_VidaPlus.Models.Prontuarios", b =>
@@ -137,7 +140,7 @@ namespace API_VidaPlus.Migrations
                     b.HasIndex("PacienteId")
                         .IsUnique();
 
-                    b.ToTable("Prontuarios", (string)null);
+                    b.ToTable("Prontuarios");
                 });
 
             modelBuilder.Entity("API_VidaPlus.Models.TiposExames", b =>
@@ -158,7 +161,7 @@ namespace API_VidaPlus.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TiposExames", (string)null);
+                    b.ToTable("TiposExames");
                 });
 
             modelBuilder.Entity("API_VidaPlus.Models.Usuarios", b =>
@@ -202,7 +205,7 @@ namespace API_VidaPlus.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("Usuarios", (string)null);
+                    b.ToTable("Usuarios");
                 });
 
             modelBuilder.Entity("API_VidaPlus.Models.Consultas", b =>

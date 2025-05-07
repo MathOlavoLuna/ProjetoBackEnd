@@ -48,21 +48,25 @@ namespace API_VidaPlus.Data
                 .WithMany(te => te.PertenceExames)
                 .HasForeignKey(e => e.TipoExameId);
 
+            modelBuilder.Entity<Exames>()
+                .HasOne(e => e.Paciente)
+                .WithMany(u => u.ExamesPaciente)
+                .HasForeignKey(e => e.PacienteId);
 
             //Prontuarios
-            modelBuilder.Entity<Exames>()
-                .HasOne(e => e.ParticipaProntuario)
-                .WithMany(p => p.ExamesPaciente)
-                .HasForeignKey(p => p.ProntuarioId);
+            modelBuilder.Entity<Prontuarios>()
+                .HasMany(p => p.ExamesPaciente)
+                .WithOne(p => p.ParticipaProntuario)
+                .HasForeignKey(e => e.ProntuarioId);
 
-            modelBuilder.Entity<Consultas>() //diz que Prontuario vai ter muitas consultas, mas que uma consulta pertence a um prontuario.
-                .HasOne(c => c.ParticipaProntuario)
-                .WithMany(p => p.ConsultasPaciente)
+            modelBuilder.Entity<Prontuarios>() //diz que Prontuario vai ter muitas consultas, mas que uma consulta pertence a um prontuario.
+                .HasMany(p => p.ConsultasPaciente)
+                .WithOne(p => p.ParticipaProntuario)
                 .HasForeignKey(c => c.ProntuarioId);
 
-            modelBuilder.Entity<Usuarios>()
-                .HasOne(u => u.ParticipaProntuario)
-                .WithOne(p => p.Paciente)
+            modelBuilder.Entity<Prontuarios>()
+                .HasOne(p => p.Paciente)
+                .WithOne(p => p.ParticipaProntuario)
                 .HasForeignKey<Prontuarios>(p => p.PacienteId);
 
 

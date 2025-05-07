@@ -4,6 +4,7 @@ using API_VidaPlus.Models;
 using API_VidaPlus.Services.Geral;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
+using System.Xml.Linq;
 
 namespace API_VidaPlus.Services
 {
@@ -32,6 +33,7 @@ namespace API_VidaPlus.Services
             {
                 var Paciente = await _context.Usuarios.FindAsync(PacienteId);
                 var Medico = await _context.Usuarios.FindAsync(MedicoId);
+                var Prontuario = await _context.Prontuarios.FindAsync(PacienteId);
                 Consultas Consulta = new()
                 {
                     Tipo = Tipo,
@@ -39,6 +41,21 @@ namespace API_VidaPlus.Services
                     MedicoId = MedicoId,
                     MarcadoPara = MarcadoPara,
                 };
+
+                if (Prontuario != null) //Cria um Prontuário caso o paciente seja novo e seja seu primeiro exame;
+                {
+                    Consulta.ProntuarioId = Prontuario.Id;
+                }
+                else
+                {
+                    Prontuarios NovoProntuario = new()
+                    {
+                        Descritivo = "Descritivo Generico Para Novo Paciente",
+                        PacienteId = PacienteId
+                    };
+                    await _context.Prontuarios.AddAsync(NovoProntuario);
+                }
+
 
                 Response.Sucesso = true;
                 Response.Mensagem = "Consulta Marcada!";

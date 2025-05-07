@@ -33,7 +33,7 @@ builder.Services.AddScoped<ConsultasService>();
 builder.Services.AddScoped<PrescricoesService>();
 builder.Services.AddScoped<ExamesService>();
 builder.Services.AddScoped<TiposExamesService>();
-
+builder.Services.AddScoped<ProntuariosService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

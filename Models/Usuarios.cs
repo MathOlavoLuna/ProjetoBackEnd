@@ -21,5 +21,7 @@ namespace API_VidaPlus.Models
         public int? ProntuarioId { get; set; }
         [JsonIgnore]
         public Prontuarios? ParticipaProntuario { get; set; }
+
+        public ICollection<Exames>? ExamesPaciente { get; set; }
     }
 }

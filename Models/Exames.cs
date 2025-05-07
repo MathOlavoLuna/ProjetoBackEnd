@@ -8,6 +8,8 @@
         public DateTime MarcadoPara { get; set; }
         public bool Compareceu { get; set; } = false;
 
+        public int PacienteId { get; set; }
+        public Usuarios? Paciente { get; set; }
 
         public int? ProntuarioId { get; set; }
         public Prontuarios? ParticipaProntuario { get; set; }
