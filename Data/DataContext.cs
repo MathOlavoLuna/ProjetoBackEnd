@@ -14,8 +14,8 @@ namespace API_VidaPlus.Data
         public DbSet<Prescricoes> Prescricoes { get; set; }
         public DbSet<Exames> Exames { get; set; }   
         public DbSet<TiposExames> TiposExames { get; set; }
-
         public DbSet<Prontuarios> Prontuarios { get; set; }
+        public DbSet<AgendaMedica> AgendaMedica { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -41,8 +41,6 @@ namespace API_VidaPlus.Data
                .IsUnique();
 
             //Exames
-            
-
             modelBuilder.Entity<Exames>()
                 .HasOne(e  => e.Tipo)
                 .WithMany(te => te.PertenceExames)
@@ -50,7 +48,12 @@ namespace API_VidaPlus.Data
 
             modelBuilder.Entity<Exames>()
                 .HasOne(e => e.Paciente)
-                .WithMany(u => u.ExamesPaciente)
+                .WithMany(u => u.ExamesPacienteMedico)
+                .HasForeignKey(e => e.PacienteId);
+
+            modelBuilder.Entity<Exames>()
+                .HasOne(e => e.Medico)
+                .WithMany(u => u.ExamesPacienteMedico)
                 .HasForeignKey(e => e.PacienteId);
 
             //Prontuarios
@@ -68,6 +71,12 @@ namespace API_VidaPlus.Data
                 .HasOne(p => p.Paciente)
                 .WithOne(p => p.ParticipaProntuario)
                 .HasForeignKey<Prontuarios>(p => p.PacienteId);
+
+            //Agenda Medica
+            modelBuilder.Entity<AgendaMedica>()
+                .HasOne(ag => ag.Medico)
+                .WithOne(u => u.AgendaMedica)
+                .HasForeignKey<AgendaMedica>(ag => ag.MedicoId);
 
 
             // Define a unique constraint for the "Email" property

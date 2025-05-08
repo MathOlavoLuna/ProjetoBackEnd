@@ -29,6 +29,7 @@ namespace API_VidaPlus.Services
                     ExamesPaciente = p.ExamesPaciente,
                     ConsultasPaciente = p.ConsultasPaciente,
                     NomePaciente = p.Paciente.Nome
+
                 }
                 ).ToListAsync();
 

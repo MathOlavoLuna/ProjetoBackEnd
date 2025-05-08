@@ -34,6 +34,7 @@ builder.Services.AddScoped<PrescricoesService>();
 builder.Services.AddScoped<ExamesService>();
 builder.Services.AddScoped<TiposExamesService>();
 builder.Services.AddScoped<ProntuariosService>();
+builder.Services.AddScoped<AgendaMedicaService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -19,7 +19,7 @@ namespace API_VidaPlus.Services
         }
 
         readonly RetornoApi<Exames> Response = new();
-        public async Task<RetornoApi<Exames>> MarcarExame(int TipoExameId, DateTime MarcadoPara, int PacienteId) {
+        public async Task<RetornoApi<Exames>> MarcarExame(int TipoExameId, DateTime MarcadoPara, int PacienteId, int MedicoId) {
             Exames Exame = new();
             try
             {
@@ -27,8 +27,9 @@ namespace API_VidaPlus.Services
                 {
                     var Paciente = await _context.Usuarios.FindAsync(PacienteId);
                     var Prontuario = await _context.Prontuarios.FirstAsync(p => p.PacienteId == PacienteId);
+                    var Medico = await _context.Usuarios.FindAsync(MedicoId);
 
-                    if(Prontuario != null) //Cria um Prontuário caso o paciente seja novo e seja seu primeiro exame;
+                    if (Prontuario != null) //Cria um Prontuário caso o paciente seja novo e seja seu primeiro exame;
                     {
                         Exame.ProntuarioId = Prontuario.Id;
                     }
@@ -46,6 +47,8 @@ namespace API_VidaPlus.Services
                     Exame.MarcadoPara = MarcadoPara;
                     Exame.PacienteId = PacienteId;
                     Exame.Paciente = Paciente;
+                    Exame.Medico = Medico;
+                    Exame.MedicoId = MedicoId;
 
                     Response.Sucesso = true;
                     Response.Data.Add(await _crud.Create(Exame));
