@@ -8,12 +8,14 @@ namespace API_VidaPlus.Services
 {
     public class PrescricoesService
     {
+        readonly ILogger<Prescricoes> _logger;
         private readonly CRUDService<Prescricoes> _crud;
         private readonly DataContext _context;
-        public PrescricoesService(CRUDService<Prescricoes> crud, DataContext context)
+        public PrescricoesService(CRUDService<Prescricoes> crud, DataContext context, ILogger<Prescricoes> logger)
         {
             _crud = crud;
             _context = context;
+            _logger = logger;
         }
 
         public RetornoApi<Prescricoes> Response = new();
@@ -37,6 +39,7 @@ namespace API_VidaPlus.Services
             }
             catch (Exception e)
             {
+                _logger.LogError($"Falha na exibição de agenda: {e.Message}");
                 Response.Erro = $"Erro: Falha ao encontrar Prescrições:  {e.Message}";
                 return Response;
             }

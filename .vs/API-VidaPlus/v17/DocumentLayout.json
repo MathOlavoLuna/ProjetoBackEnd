@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\srmat\\source\\repos\\api-vidaplus\\migrations\\20250507143630_arrumando_relacionamentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:migrations\\20250507143630_arrumando_relacionamentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\srmat\\source\\repos\\api-vidaplus\\services\\usuariosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:services\\usuariosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\srmat\\source\\repos\\api-vidaplus\\services\\tiposexamesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:services\\tiposexamesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\srmat\\source\\repos\\api-vidaplus\\services\\prontuariosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:services\\prontuariosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\srmat\\source\\repos\\api-vidaplus\\services\\prescricoesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:services\\prescricoesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\srmat\\source\\repos\\api-vidaplus\\services\\examesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:services\\examesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\srmat\\source\\repos\\api-vidaplus\\controllers\\examescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:controllers\\examescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\srmat\\source\\repos\\api-vidaplus\\services\\agendamedicaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:services\\agendamedicaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\srmat\\source\\repos\\api-vidaplus\\controllers\\consultascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:controllers\\consultascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|c:\\users\\srmat\\source\\repos\\api-vidaplus\\services\\consultasservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11C5831-8FCF-4BC4-89EB-3D4FCDC9816F}|API-VidaPlus.csproj|solutionrelative:services\\consultasservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,53 +43,93 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20250507143630_arrumando_relacionamentos.cs",
-              "DocumentMoniker": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Migrations\\20250507143630_arrumando_relacionamentos.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250507143630_arrumando_relacionamentos.cs",
-              "ToolTip": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Migrations\\20250507143630_arrumando_relacionamentos.cs",
-              "RelativeToolTip": "Migrations\\20250507143630_arrumando_relacionamentos.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Title": "UsuariosService.cs",
+              "DocumentMoniker": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Services\\UsuariosService.cs",
+              "RelativeDocumentMoniker": "Services\\UsuariosService.cs",
+              "ToolTip": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Services\\UsuariosService.cs",
+              "RelativeToolTip": "Services\\UsuariosService.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAjwDoAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T01:33:54.231Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ExamesController.cs",
-              "DocumentMoniker": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Controllers\\ExamesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ExamesController.cs",
-              "ToolTip": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Controllers\\ExamesController.cs",
-              "RelativeToolTip": "Controllers\\ExamesController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBMAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T01:31:27.955Z",
+              "WhenOpened": "2025-05-10T02:10:33.742Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ExamesService.cs",
-              "DocumentMoniker": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Services\\ExamesService.cs",
-              "RelativeDocumentMoniker": "Services\\ExamesService.cs",
-              "ToolTip": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Services\\ExamesService.cs",
-              "RelativeToolTip": "Services\\ExamesService.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAswFkAAAArAAAAAAAAAA==",
+              "Title": "TiposExamesService.cs",
+              "DocumentMoniker": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Services\\TiposExamesService.cs",
+              "RelativeDocumentMoniker": "Services\\TiposExamesService.cs",
+              "ToolTip": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Services\\TiposExamesService.cs",
+              "RelativeToolTip": "Services\\TiposExamesService.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowC8AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T00:53:08.342Z",
+              "WhenOpened": "2025-05-10T02:06:21.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProntuariosService.cs",
+              "DocumentMoniker": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Services\\ProntuariosService.cs",
+              "RelativeDocumentMoniker": "Services\\ProntuariosService.cs",
+              "ToolTip": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Services\\ProntuariosService.cs",
+              "RelativeToolTip": "Services\\ProntuariosService.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAwwBIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T02:01:42.852Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ConsultasController.cs",
-              "DocumentMoniker": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Controllers\\ConsultasController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ConsultasController.cs",
-              "ToolTip": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Controllers\\ConsultasController.cs",
-              "RelativeToolTip": "Controllers\\ConsultasController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
+              "Title": "PrescricoesService.cs",
+              "DocumentMoniker": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Services\\PrescricoesService.cs",
+              "RelativeDocumentMoniker": "Services\\PrescricoesService.cs",
+              "ToolTip": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Services\\PrescricoesService.cs",
+              "RelativeToolTip": "Services\\PrescricoesService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T00:52:35.508Z"
+              "WhenOpened": "2025-05-10T01:59:32.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ExamesService.cs",
+              "DocumentMoniker": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Services\\ExamesService.cs",
+              "RelativeDocumentMoniker": "Services\\ExamesService.cs",
+              "ToolTip": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Services\\ExamesService.cs",
+              "RelativeToolTip": "Services\\ExamesService.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAowFsAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T01:54:37.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ConsultasService.cs",
+              "DocumentMoniker": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Services\\ConsultasService.cs",
+              "RelativeDocumentMoniker": "Services\\ConsultasService.cs",
+              "ToolTip": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Services\\ConsultasService.cs",
+              "RelativeToolTip": "Services\\ConsultasService.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwEUAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T01:53:01.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AgendaMedicaService.cs",
+              "DocumentMoniker": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Services\\AgendaMedicaService.cs",
+              "RelativeDocumentMoniker": "Services\\AgendaMedicaService.cs",
+              "ToolTip": "C:\\Users\\SrMat\\source\\repos\\API-VidaPlus\\Services\\AgendaMedicaService.cs",
+              "RelativeToolTip": "Services\\AgendaMedicaService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T01:49:09.008Z",
+              "EditorCaption": ""
             }
           ]
         }

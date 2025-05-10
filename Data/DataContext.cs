@@ -48,13 +48,13 @@ namespace API_VidaPlus.Data
 
             modelBuilder.Entity<Exames>()
                 .HasOne(e => e.Paciente)
-                .WithMany(u => u.ExamesPacienteMedico)
+                .WithMany(u => u.ExamesPaciente)
                 .HasForeignKey(e => e.PacienteId);
 
             modelBuilder.Entity<Exames>()
                 .HasOne(e => e.Medico)
-                .WithMany(u => u.ExamesPacienteMedico)
-                .HasForeignKey(e => e.PacienteId);
+                .WithMany(u => u.ExamesMedico)
+                .HasForeignKey(e => e.MedicoId);
 
             //Prontuarios
             modelBuilder.Entity<Prontuarios>()

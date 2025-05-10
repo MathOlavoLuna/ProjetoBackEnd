@@ -5,6 +5,7 @@ using API_VidaPlus.Services;
 using API_VidaPlus.Services.Geral;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration.UserSecrets;
 
 namespace API_VidaPlus.Services
 {
@@ -56,8 +57,9 @@ namespace API_VidaPlus.Services
         {
             try
             {
-                Usuarios Usuario = new Usuarios(Nome, Idade, Senha, Cpf, Email, Tipo);
-
+                string SenhaHash = CriaHash.GerarHash(Senha);
+                Usuarios Usuario = new(Nome, Idade, SenhaHash, Cpf, Email, Tipo);
+                
                 if (await _context.Usuarios.AnyAsync(u => u.Email == Usuario.Email))
                 {
                     Response.Erro = "Erro: Email já cadastrado";
@@ -70,10 +72,20 @@ namespace API_VidaPlus.Services
                     return Response;
                 }
 
-                
+                if (Tipo == TiposUsuarios.Enfermeiro || Tipo == TiposUsuarios.Médico || Tipo == TiposUsuarios.Tecnico) //na criação do usuário caso ele tenha algum cargo do hospital cria sua agenda.
+                {
+                    AgendaMedica Agenda = new()
+                    {
+                        Medico = Usuario,
+                        MedicoId = Usuario.Id
+                    };
+
+                    await _context.AgendaMedica.AddAsync(Agenda);
+                }
                 Response.Sucesso = true;
                 Response.Mensagem = "Usuário criado com sucesso.";
                 Response.Data.Add(await _crud.Create(Usuario));
+                
                 return Response;
 
             }

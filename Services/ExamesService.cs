@@ -9,13 +9,15 @@ namespace API_VidaPlus.Services
 {
     public class ExamesService
     {
+        readonly ILogger<Exames> _logger;
         private readonly DataContext _context;
         private readonly CRUDService<Exames> _crud;
 
-        public ExamesService(CRUDService<Exames> crud, DataContext context)
+        public ExamesService(CRUDService<Exames> crud, DataContext context, ILogger<Exames> logger)
         {
             _context = context;
             _crud = crud;
+            _logger = logger;
         }
 
         readonly RetornoApi<Exames> Response = new();
@@ -41,6 +43,7 @@ namespace API_VidaPlus.Services
                             PacienteId = PacienteId
                         };
                         await _context.Prontuarios.AddAsync(NovoProntuario);
+                        _logger.LogInformation($"Criação de Prontuário para usuário que não têm ainda.");
                     }
 
                     Exame.TipoExameId = TipoExameId;
@@ -60,6 +63,7 @@ namespace API_VidaPlus.Services
             }
             catch (Exception e)
             {
+                _logger.LogError($"Falha na criação de um Exame: {e.Message}");
                 Response.Erro = $"Erro: {e.Message}";
                 return Response;
             }
@@ -85,6 +89,7 @@ namespace API_VidaPlus.Services
             }
             catch (Exception e) 
             {
+                _logger.LogError($"Falha ao marcar que paciente compareceu no exame: {e.Message}");
                 Response.Erro = $"Erro: Falha ao procurar exame: {e.Message}";
                 return Response;
             }
@@ -101,6 +106,7 @@ namespace API_VidaPlus.Services
             }
             catch (Exception e)
             {
+                _logger.LogError($"Falha na exibição dos exames: {e.Message}");
                 Response.Erro = $"Erro: falha ao buscar exames: {e.Message}";
                 return Response;
             }

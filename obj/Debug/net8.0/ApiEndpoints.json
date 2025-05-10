@@ -1,5 +1,31 @@
 [
   {
+    "ContainingType": "API_VidaPlus.Controllers.AgendaMedicaController",
+    "Method": "ExibirAgenda",
+    "RelativePath": "api/AgendaMedica",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "MedicoId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_VidaPlus.Classes.RetornoAgendaMedica",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "API_VidaPlus.Controllers.ConsultasController",
     "Method": "ExibirConsultas",
     "RelativePath": "api/Consultas",
@@ -167,6 +193,11 @@
       },
       {
         "Name": "PacienteId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "MedicoId",
         "Type": "System.Int32",
         "IsRequired": false
       }

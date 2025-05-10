@@ -8,13 +8,15 @@ namespace API_VidaPlus.Services
 {
     public class ProntuariosService
     {
+        readonly ILogger<Prontuarios> _logger;
         readonly CRUDService<Prontuarios> _crud;
         readonly DataContext _context;
 
-        public ProntuariosService(DataContext context, CRUDService<Prontuarios> crud)
+        public ProntuariosService(DataContext context, CRUDService<Prontuarios> crud, ILogger<Prontuarios> logger)
         {
             _crud = crud;
             _context = context;
+            _logger = logger;
         }
 
         public RetornoApi<Prontuarios> Response = new();
@@ -78,6 +80,7 @@ namespace API_VidaPlus.Services
             }
             catch (Exception e)
             {
+                _logger.LogError($"Falha na criação do Prontuario: {e.Message}");
                 Response.Erro = $"Erro: falha ao criar prontuário: {e.Message}";
                 return Response;
             }

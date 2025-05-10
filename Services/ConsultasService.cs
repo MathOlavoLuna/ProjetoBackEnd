@@ -10,12 +10,14 @@ namespace API_VidaPlus.Services
 {
     public class ConsultasService
     {
+        readonly ILogger<Consultas> _logger;
         private readonly DataContext _context;
         private readonly CRUDService<Consultas> _crud;
-        public ConsultasService(DataContext context, CRUDService<Consultas> crud)
+        public ConsultasService(DataContext context, CRUDService<Consultas> crud, ILogger<Consultas> logger)
         {
             _context = context;
             _crud = crud;
+            _logger = logger;
         }
 
         readonly RetornoApi<Consultas> Response = new();
@@ -65,6 +67,7 @@ namespace API_VidaPlus.Services
             }
             catch (Exception e)
             {
+                _logger.LogError($"Falha na criação da Consulta: {e.Message}");
                 Response.Erro = $"Erro: {e.Message}";
                 return Response;
             }
@@ -91,6 +94,7 @@ namespace API_VidaPlus.Services
             }
             catch (Exception e)
             {
+                _logger.LogError($"Falha na edição da Consulta: {e.Message}");
                 Response.Erro = $"Erro: {e.Message}";
                 return Response;
             }
@@ -116,6 +120,7 @@ namespace API_VidaPlus.Services
             }
             catch (Exception e) 
             {
+                _logger.LogError($" Falha ao Desmarcar Consulta : {e.Message}");
                 Response.Erro = $"Erro: Falha ao Desmarcar Consulta: {e.Message}";
                 return Response;
             }

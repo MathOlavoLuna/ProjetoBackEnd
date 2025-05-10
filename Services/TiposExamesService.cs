@@ -11,11 +11,12 @@ namespace API_VidaPlus.Services
     {
         private readonly DataContext _context;
         private readonly CRUDService<TiposExames> _crud;
-
-        public TiposExamesService(DataContext context, CRUDService<TiposExames> crud)
+        readonly ILogger<TiposExames> _logger;
+        public TiposExamesService(DataContext context, CRUDService<TiposExames> crud, ILogger<TiposExames> logger)
         {
             _context = context;
             _crud = crud;
+            _logger = logger;
         }
         public RetornoApi<TiposExames> Response = new();
 
@@ -42,6 +43,7 @@ namespace API_VidaPlus.Services
             }
             catch (Exception e)
             {
+                _logger.LogError($"Erro: Falha ao criar Tipo de Exame {e.Message}");
                 Response.Erro = $"Erro: Falha ao criar Tipo de Exame {e.Message}";
                 return Response;
             }

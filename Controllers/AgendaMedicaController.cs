@@ -18,9 +18,9 @@ namespace API_VidaPlus.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<AgendaMedica>> ExibirAgenda()
+        public async Task<ActionResult<RetornoAgendaMedica>> ExibirAgenda(int MedicoId)
         {
-            return Ok(await _service.VisualizarAgenda());
+            return Ok(await _service.VisualizarAgenda(MedicoId));
         }
     }
 }

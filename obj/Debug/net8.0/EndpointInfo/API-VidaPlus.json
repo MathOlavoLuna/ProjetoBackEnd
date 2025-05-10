@@ -5,6 +5,45 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/AgendaMedica": {
+      "get": {
+        "tags": [
+          "AgendaMedica"
+        ],
+        "parameters": [
+          {
+            "name": "MedicoId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetornoAgendaMedica"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetornoAgendaMedica"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetornoAgendaMedica"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Consultas": {
       "get": {
         "tags": [
@@ -289,6 +328,14 @@
           },
           {
             "name": "PacienteId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "MedicoId",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -857,8 +904,7 @@
         "properties": {
           "id": {
             "type": "integer",
-            "format": "int32",
-            "nullable": true
+            "format": "int32"
           },
           "tipo": {
             "enum": [
@@ -881,16 +927,8 @@
             "type": "string",
             "format": "date-time"
           },
-          "prescricao": {
-            "$ref": "#/components/schemas/Prescricoes"
-          },
           "compareceu": {
             "type": "boolean",
-            "nullable": true
-          },
-          "prontuarioId": {
-            "type": "integer",
-            "format": "int32",
             "nullable": true
           }
         },
@@ -921,16 +959,10 @@
             "type": "integer",
             "format": "int32"
           },
-          "paciente": {
-            "$ref": "#/components/schemas/Usuarios"
-          },
-          "prontuarioId": {
+          "medicoId": {
             "type": "integer",
             "format": "int32",
             "nullable": true
-          },
-          "participaProntuario": {
-            "$ref": "#/components/schemas/Prontuarios"
           }
         },
         "additionalProperties": false
@@ -986,6 +1018,42 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Exames"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RetornoAgendaMedica": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "medicoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "medicoNome": {
+            "type": "string",
+            "nullable": true
+          },
+          "medicoIdade": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "examesMedico": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Exames"
+            },
+            "nullable": true
+          },
+          "consultasMedico": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Consultas"
             },
             "nullable": true
           }
@@ -1082,32 +1150,6 @@
               "Gerente"
             ],
             "type": "string"
-          },
-          "consultasPaciente": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Consultas"
-            },
-            "nullable": true
-          },
-          "consultasMedico": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Consultas"
-            },
-            "nullable": true
-          },
-          "prontuarioId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "examesPaciente": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Exames"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false

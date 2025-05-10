@@ -12,18 +12,20 @@ namespace API_VidaPlus.Models
         public string Cpf { get; set; } = Cpf;
         public string Email { get; set; } = Email;
         public TiposUsuarios Tipo { get; set; } = Tipo;
-        
 
+        [JsonIgnore]
         public ICollection<Consultas>? ConsultasPaciente { get; set; }
-
+        [JsonIgnore]
         public ICollection<Consultas>? ConsultasMedico { get; set; }
-
+        [JsonIgnore]
         public int? ProntuarioId { get; set; }
         [JsonIgnore]
         public Prontuarios? ParticipaProntuario { get; set; }
-
-        public ICollection<Exames>? ExamesPacienteMedico { get; set; }
-
+        [JsonIgnore]
+        public ICollection<Exames>? ExamesPaciente { get; set; }
+        [JsonIgnore]
+        public ICollection<Exames>? ExamesMedico { get; set; }
+        [JsonIgnore]
         public AgendaMedica? AgendaMedica { get; set; }
     }
 }
