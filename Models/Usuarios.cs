@@ -27,5 +27,7 @@ namespace API_VidaPlus.Models
         public ICollection<Exames>? ExamesMedico { get; set; }
         [JsonIgnore]
         public AgendaMedica? AgendaMedica { get; set; }
+        [JsonIgnore]
+        public Leitos? Internado { get; set; }
     }
 }

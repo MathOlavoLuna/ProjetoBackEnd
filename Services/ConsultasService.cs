@@ -35,7 +35,7 @@ namespace API_VidaPlus.Services
             {
                 var Paciente = await _context.Usuarios.FindAsync(PacienteId);
                 var Medico = await _context.Usuarios.FindAsync(MedicoId);
-                var Prontuario = await _context.Prontuarios.FindAsync(PacienteId);
+                var Prontuario = await _context.Prontuarios.FirstOrDefaultAsync(p => p.PacienteId == PacienteId);
                 Consultas Consulta = new()
                 {
                     Tipo = Tipo,

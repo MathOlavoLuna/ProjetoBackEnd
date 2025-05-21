@@ -16,6 +16,10 @@ namespace API_VidaPlus.Data
         public DbSet<TiposExames> TiposExames { get; set; }
         public DbSet<Prontuarios> Prontuarios { get; set; }
         public DbSet<AgendaMedica> AgendaMedica { get; set; }
+        public DbSet<Leitos> Leitos { get; set; }
+        public DbSet<Hospital> Hospitais { get; set; }
+        public DbSet<Produtos> Produtos { get; set; }
+        public DbSet<RelatorioFinanceiroHospital> RelatoriosFinanceiros { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -77,6 +81,28 @@ namespace API_VidaPlus.Data
                 .HasOne(ag => ag.Medico)
                 .WithOne(u => u.AgendaMedica)
                 .HasForeignKey<AgendaMedica>(ag => ag.MedicoId);
+
+            //Hospital
+            modelBuilder.Entity<Hospital>()
+                .HasMany(h => h.Leitos)
+                .WithOne(l => l.Hospital)
+                .HasForeignKey(l => l.HospitalId);
+
+            modelBuilder.Entity<Leitos>()
+                .HasOne(l => l.Paciente)
+                .WithOne(u => u.Internado)
+                .HasForeignKey<Leitos>(l => l.PacienteId);
+
+            modelBuilder.Entity<Hospital>()
+                .HasOne(h => h.RelatorioFinanceiroHospital)
+                .WithOne(rf => rf.Hospital)
+                .HasForeignKey<Hospital>(rf => rf.RelatorioId);
+
+            //RelatorioFinanceiro
+            modelBuilder.Entity<RelatorioFinanceiroHospital>()
+                .HasMany(rf => rf.Produtos)
+                .WithOne(p => p.PertenceRelatorioHospital)
+                .HasForeignKey(rf => rf.RelatorioId);
 
 
             // Define a unique constraint for the "Email" property

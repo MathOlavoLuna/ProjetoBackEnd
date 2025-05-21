@@ -19,7 +19,7 @@ namespace API_VidaPlus.Services
             _crud = crud;
         }
 
-        RetornoApi<Usuarios> Response = new RetornoApi<Usuarios>();
+        readonly RetornoApi<Usuarios> Response = new RetornoApi<Usuarios>();
         public async Task<RetornoApi<Usuarios>> RetornaUsuarios()
         {
             try

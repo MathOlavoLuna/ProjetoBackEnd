@@ -28,24 +28,25 @@ namespace API_VidaPlus.Services
                 if(TipoExameId != 0 && PacienteId != 0)
                 {
                     var Paciente = await _context.Usuarios.FindAsync(PacienteId);
-                    var Prontuario = await _context.Prontuarios.FirstAsync(p => p.PacienteId == PacienteId);
+                    var Prontuario = _context.Prontuarios.FirstOrDefault(p => p.PacienteId == PacienteId);
                     var Medico = await _context.Usuarios.FindAsync(MedicoId);
-
+                    Prontuarios NovoProntuario = new()
+                    {
+                        Descritivo = "Descritivo Generico Para Novo Paciente",
+                        PacienteId = PacienteId
+                    };
                     if (Prontuario != null) //Cria um Prontuário caso o paciente seja novo e seja seu primeiro exame;
                     {
                         Exame.ProntuarioId = Prontuario.Id;
                     }
                     else
                     {
-                        Prontuarios NovoProntuario = new()
-                        {
-                            Descritivo = "Descritivo Generico Para Novo Paciente",
-                            PacienteId = PacienteId
-                        };
                         await _context.Prontuarios.AddAsync(NovoProntuario);
                         _logger.LogInformation($"Criação de Prontuário para usuário que não têm ainda.");
+                        Exame.ProntuarioId = NovoProntuario.Id;
                     }
 
+                    
                     Exame.TipoExameId = TipoExameId;
                     Exame.MarcadoPara = MarcadoPara;
                     Exame.PacienteId = PacienteId;

@@ -241,6 +241,57 @@
     ]
   },
   {
+    "ContainingType": "API_VidaPlus.Controllers.LeitosController",
+    "Method": "FluxoInterna\u00E7oes",
+    "RelativePath": "api/Leitos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "API_VidaPlus.Models.Leitos",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_VidaPlus.Controllers.LeitosController",
+    "Method": "AlocarPacienteLeito",
+    "RelativePath": "api/Leitos",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PacienteId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "LeitoId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_VidaPlus.Models.Leitos",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "API_VidaPlus.Controllers.PrescricoesController",
     "Method": "ExibirPrescricoes",
     "RelativePath": "api/Prescricoes",
@@ -302,6 +353,37 @@
     ]
   },
   {
+    "ContainingType": "API_VidaPlus.Controllers.ProdutosController",
+    "Method": "CadastrarProduto",
+    "RelativePath": "api/Produtos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Nome",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Preco",
+        "Type": "System.Single",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_VidaPlus.Models.Produtos",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "API_VidaPlus.Controllers.ProntuariosController",
     "Method": "ExibirProntuario",
     "RelativePath": "api/Prontuarios",
@@ -343,6 +425,32 @@
     "ReturnTypes": [
       {
         "Type": "API_VidaPlus.Classes.RetornoProntuario",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_VidaPlus.Controllers.RelatorioFinanceiroController",
+    "Method": "ComprarProduto",
+    "RelativePath": "api/RelatorioFinanceiro",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ProdutoId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_VidaPlus.Models.RelatorioFinanceiroHospital",
         "MediaTypes": [
           "text/plain",
           "application/json",

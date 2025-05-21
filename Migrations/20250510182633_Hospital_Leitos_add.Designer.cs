@@ -4,6 +4,7 @@ using API_VidaPlus.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API_VidaPlus.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20250510182633_Hospital_Leitos_add")]
+    partial class Hospital_Leitos_add
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -133,18 +136,12 @@ namespace API_VidaPlus.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("RelatorioId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("RelatorioId")
-                        .IsUnique();
-
-                    b.ToTable("Hospitais");
+                    b.ToTable("Hospital");
                 });
 
-            modelBuilder.Entity("API_VidaPlus.Models.Leitos", b =>
+            modelBuilder.Entity("API_VidaPlus.Models.Leito", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -158,7 +155,7 @@ namespace API_VidaPlus.Migrations
                     b.Property<bool>("Ocupado")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<int?>("PacienteId")
+                    b.Property<int>("PacienteId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -168,7 +165,7 @@ namespace API_VidaPlus.Migrations
                     b.HasIndex("PacienteId")
                         .IsUnique();
 
-                    b.ToTable("Leitos");
+                    b.ToTable("Leito");
                 });
 
             modelBuilder.Entity("API_VidaPlus.Models.Prescricoes", b =>
@@ -200,31 +197,6 @@ namespace API_VidaPlus.Migrations
                     b.ToTable("Prescricoes");
                 });
 
-            modelBuilder.Entity("API_VidaPlus.Models.Produtos", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<float>("Preco")
-                        .HasColumnType("float");
-
-                    b.Property<int?>("RelatorioId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RelatorioId");
-
-                    b.ToTable("Produtos");
-                });
-
             modelBuilder.Entity("API_VidaPlus.Models.Prontuarios", b =>
                 {
                     b.Property<int>("Id")
@@ -246,37 +218,6 @@ namespace API_VidaPlus.Migrations
                         .IsUnique();
 
                     b.ToTable("Prontuarios");
-                });
-
-            modelBuilder.Entity("API_VidaPlus.Models.RelatorioFinanceiroHospital", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("Desconto")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<int>("HospitalId")
-                        .HasColumnType("int");
-
-                    b.Property<float>("Preco")
-                        .HasColumnType("float");
-
-                    b.Property<int>("ProdutoId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("Provento")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<float>("Total")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("RelatoriosFinanceiros");
                 });
 
             modelBuilder.Entity("API_VidaPlus.Models.TiposExames", b =>
@@ -411,16 +352,7 @@ namespace API_VidaPlus.Migrations
                     b.Navigation("Tipo");
                 });
 
-            modelBuilder.Entity("API_VidaPlus.Models.Hospital", b =>
-                {
-                    b.HasOne("API_VidaPlus.Models.RelatorioFinanceiroHospital", "RelatorioFinanceiroHospital")
-                        .WithOne("Hospital")
-                        .HasForeignKey("API_VidaPlus.Models.Hospital", "RelatorioId");
-
-                    b.Navigation("RelatorioFinanceiroHospital");
-                });
-
-            modelBuilder.Entity("API_VidaPlus.Models.Leitos", b =>
+            modelBuilder.Entity("API_VidaPlus.Models.Leito", b =>
                 {
                     b.HasOne("API_VidaPlus.Models.Hospital", "Hospital")
                         .WithMany("Leitos")
@@ -430,7 +362,9 @@ namespace API_VidaPlus.Migrations
 
                     b.HasOne("API_VidaPlus.Models.Usuarios", "Paciente")
                         .WithOne("Internado")
-                        .HasForeignKey("API_VidaPlus.Models.Leitos", "PacienteId");
+                        .HasForeignKey("API_VidaPlus.Models.Leito", "PacienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Hospital");
 
@@ -444,15 +378,6 @@ namespace API_VidaPlus.Migrations
                         .HasForeignKey("API_VidaPlus.Models.Prescricoes", "ConsultaId");
 
                     b.Navigation("PertenceConsulta");
-                });
-
-            modelBuilder.Entity("API_VidaPlus.Models.Produtos", b =>
-                {
-                    b.HasOne("API_VidaPlus.Models.RelatorioFinanceiroHospital", "PertenceRelatorioHospital")
-                        .WithMany("Produtos")
-                        .HasForeignKey("RelatorioId");
-
-                    b.Navigation("PertenceRelatorioHospital");
                 });
 
             modelBuilder.Entity("API_VidaPlus.Models.Prontuarios", b =>
@@ -481,13 +406,6 @@ namespace API_VidaPlus.Migrations
                     b.Navigation("ConsultasPaciente");
 
                     b.Navigation("ExamesPaciente");
-                });
-
-            modelBuilder.Entity("API_VidaPlus.Models.RelatorioFinanceiroHospital", b =>
-                {
-                    b.Navigation("Hospital");
-
-                    b.Navigation("Produtos");
                 });
 
             modelBuilder.Entity("API_VidaPlus.Models.TiposExames", b =>

@@ -1,4 +1,5 @@
 using API_VidaPlus.Data;
+using API_VidaPlus.Models;
 using API_VidaPlus.Services;
 using API_VidaPlus.Services.Geral;
 using Microsoft.EntityFrameworkCore;
@@ -14,8 +15,9 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-}); 
+});
 
+builder.Services.AddScoped<CRUDService<RelatorioFinanceiroHospital>>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(
@@ -35,6 +37,9 @@ builder.Services.AddScoped<ExamesService>();
 builder.Services.AddScoped<TiposExamesService>();
 builder.Services.AddScoped<ProntuariosService>();
 builder.Services.AddScoped<AgendaMedicaService>();
+builder.Services.AddScoped<LeitosService>();
+builder.Services.AddScoped<ProdutosService>();
+builder.Services.AddScoped<RelatorioFinanceiroService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

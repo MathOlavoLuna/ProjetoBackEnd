@@ -4,6 +4,7 @@ using API_VidaPlus.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API_VidaPlus.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20250510203455_id_produto_relatorio")]
+    partial class id_produto_relatorio
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -215,7 +218,7 @@ namespace API_VidaPlus.Migrations
                     b.Property<float>("Preco")
                         .HasColumnType("float");
 
-                    b.Property<int?>("RelatorioId")
+                    b.Property<int>("RelatorioId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -450,7 +453,9 @@ namespace API_VidaPlus.Migrations
                 {
                     b.HasOne("API_VidaPlus.Models.RelatorioFinanceiroHospital", "PertenceRelatorioHospital")
                         .WithMany("Produtos")
-                        .HasForeignKey("RelatorioId");
+                        .HasForeignKey("RelatorioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("PertenceRelatorioHospital");
                 });
